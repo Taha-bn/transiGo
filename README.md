@@ -1,42 +1,40 @@
 # TransiGo — Application de gestion de transport
 
-## 1. Présentation du projet
+## Présentation du projet
 
-TransiGo est un projet d’application de gestion de transport conçu pour faciliter la gestion des clients, des commandes de transport, des véhicules, des chauffeurs et le suivi des livraisons.
+TransiGo est un projet de développement d’une application de gestion de transport. L’idée est de créer une solution qui permet à une entreprise de mieux organiser ses activités de transport et de faciliter la gestion des informations liées aux commandes et aux livraisons.
 
-Le projet vise à centraliser les informations et à améliorer l’organisation des opérations de transport au sein d’une entreprise.
+L’application aura pour objectif de regrouper les informations dans un seul espace et de simplifier le travail quotidien des personnes chargées de la gestion du transport.
 
-## 2. Objectifs
+## Objectif du projet
 
-- Organiser et suivre les commandes de transport.
+L’objectif principal est de concevoir une application simple et pratique qui facilite l’organisation et le suivi des opérations de transport.
+
+## Fonctionnalités envisagées
+
+L’application pourra notamment permettre de :
+
 - Gérer les informations des clients.
+- Créer et consulter les commandes de transport.
 - Gérer les véhicules et les chauffeurs.
-- Planifier les livraisons.
-- Faciliter le suivi de l’état des commandes.
-- Prévoir un accès sécurisé selon le rôle de l’utilisateur.
+- Organiser la planification des livraisons.
+- Suivre l’état d’avancement des commandes et des livraisons.
+- Permettre aux utilisateurs autorisés d’accéder aux fonctionnalités selon leur rôle.
 
-## 3. Fonctionnalités prévues
+## Outils et technologies
 
-- Authentification des utilisateurs.
-- Tableau de bord.
-- Gestion des clients.
-- Gestion des commandes de transport.
-- Gestion des véhicules et des chauffeurs.
-- Planification et suivi des livraisons.
-- Vérification de la disponibilité des véhicules et des chauffeurs.
+Les outils et technologies envisagés pour le projet sont :
 
-## 4. Technologies et outils
+- **Java** pour le développement de l’application.
+- **JavaFX** pour la création des interfaces graphiques.
+- **PostgreSQL** pour la gestion de la base de données.
+- **UML avec draw.io** pour représenter et organiser la conception du système.
+- **Figma** pour préparer les maquettes des interfaces.
+- **GitHub** pour partager les fichiers et suivre l’évolution du projet.
 
-- **Java / JavaFX** : développement de l’application envisagé.
-- **PostgreSQL** : gestion de la base de données envisagée.
-- **JDBC** : communication entre Java et la base de données.
-- **UML avec draw.io** : modélisation du système.
-- **Figma** : conception des maquettes UI/UX.
-- **GitHub** : partage et gestion du projet.
+## Maquettes UI/UX
 
-## 5. Maquettes UI/UX
-
-Les maquettes de l’application sont disponibles sur Figma :
+Les premières maquettes de l’application sont préparées sur Figma afin de visualiser les interfaces et de réfléchir à leur organisation avant le développement.
 
 - [Maquette 1](https://www.figma.com/design/dW42pUAFXyx8jtrkuc4yZM/TransiGo-%E2%80%93-Maquettes-UI-UX?node-id=1-2&t=3tEem005OlevQGqj-1)
 - [Maquette 2](https://www.figma.com/design/dW42pUAFXyx8jtrkuc4yZM/TransiGo-%E2%80%93-Maquettes-UI-UX?node-id=9-2&t=3tEem005OlevQGqj-1)
@@ -44,25 +42,9 @@ Les maquettes de l’application sont disponibles sur Figma :
 - [Maquette 4](https://www.figma.com/design/aSGRPyMVrA2TQVrpjML1ln/TransiGo-%E2%80%93-Maquettes-UI-UX?node-id=0-1&t=plse0JkWFScKW76q-1)
 - [Maquette 5](https://www.figma.com/design/aSGRPyMVrA2TQVrpjML1ln/TransiGo-%E2%80%93-Maquettes-UI-UX?node-id=1-56&t=plse0JkWFScKW76q-1)
 
-## 6. Répartition du travail
+## Avancement du projet
 
-| Membre | Contribution |
-|---|---|
-| Ouhsine Mohamed | Maquettes UI/UX sur Figma |
-| Nadia Berkouks | Diagramme de classes |
-| Taha Benzaki | Architecture, documentation et exigences |
-| Abdellatif Bahdda | Cahier des charges et exigences |
-| Imane El Fakkany | Diagramme de cas d’utilisation |
+Le projet est actuellement au début de sa réalisation. Le travail porte sur la compréhension du besoin, la préparation des documents de conception et la définition des grandes lignes de l’application.
 
-Les membres ont d’abord discuté ensemble du contenu du projet lors d’une réunion, puis se sont réparti les tâches pour avancer sur les différentes parties de la conception.
-
-## 7. Dépôt du projet
-
-[Accéder au dépôt GitHub TransiGo](https://github.com/Taha-bn/transiGo)
-
-## 8. État du projet
-
-Le projet est actuellement présenté à travers ses éléments de conception : cahier des charges, exigences, diagrammes UML, architecture proposée et maquettes UI/UX.
-
-Les fonctionnalités et technologies mentionnées comme prévues seront développées et testées progressivement. Cette section sera mise à jour au fur et à mesure de l’avancement du projet.
+Le contenu de ce dépôt sera enrichi progressivement au fur et à mesure de l’avancement du projet.
 
