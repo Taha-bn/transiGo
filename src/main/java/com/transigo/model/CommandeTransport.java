@@ -1,7 +1,7 @@
 package com.transigo.model;
 import java.time.LocalDate;
 
-public class CommandETransport{
+public class CommandeTransport{
     private int id;
     private String reference;
     private LocalDate dateCreation;
@@ -10,18 +10,18 @@ public class CommandETransport{
     private String natureMarchandise;
     private double poidsKg;
     private LocalDate dateSouhaitee;
-    private StatutCommande statut;
+    private StatusCommande statut;
     private int clientId;
     private int utilisateurId;
 
-    public CommandETransport(){
+    public CommandeTransport(){
         this.dateCreation = LocalDate.now();
-        this.statut = StatutCommande.EN_ATTENTE;
+        this.statut = StatusCommande.EN_ATTENTE;
     }
 
-    public CommandETransport(int id, String reference , LocalDate dateCreation
-                             String adresseDepart, String adresseArrivee, String natureMarchandise
-                             double poidsKg, LocalDate dateSouhaitee, StatutCommande statut
+    public CommandeTransport(int id, String reference , LocalDate dateCreation,
+                             String adresseDepart, String adresseArrivee, String natureMarchandise,
+                             double poidsKg, LocalDate dateSouhaitee, StatusCommande statut,
                              int clientId, int utilisateurId){
         this.id = id;
         this.reference = reference;
@@ -66,8 +66,8 @@ public class CommandETransport{
     public LocalDate getDateSouhaitee() { return dateSouhaitee; }
     public void setDateSouhaitee(LocalDate d) { this.dateSouhaitee = d; }
     
-    public StatutCommande getStatut() { return statut; }
-    public void setStatut(StatutCommande statut) { this.statut = statut; }
+    public StatusCommande getStatut() { return statut; }
+    public void setStatut(StatusCommande statut) { this.statut = statut; }
     
     public int getClientId() { return clientId; }
     public void setClientId(int clientId) { this.clientId = clientId; }

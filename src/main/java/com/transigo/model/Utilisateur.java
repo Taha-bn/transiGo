@@ -24,19 +24,19 @@ public class Utilisateur {
     public int getId(){ return id; }
     public void setId(int id){ this.id = id; }
 
-    public int getNom(){ return nom;}
+    public String getNom(){ return nom;}
     public void setNom(String nom){ this.nom = nom;}
 
-    public int getEmail(){ return email;}
+    public String getEmail(){ return email;}
     public void setEmail(String email){ this.email = email;}
 
-    public int getmotPasseHash(){ return motPasseHash;}
+    public String getmotPasseHash(){ return motPasseHash;}
     public void setmotPasseHash(String motPasseHash){ this.motPasseHash = motPasseHash;}
 
-    public int getRole(){ return role;}
+    public Role getRole(){ return role;}
     public void setRole(Role role){ this.role = role;}
 
-    public int getActif(){ return actif;}
+    public boolean getActif(){ return actif;}
     public void setActif(boolean actif){ this.actif = actif;}
 
     public boolean estAdministrateur(){

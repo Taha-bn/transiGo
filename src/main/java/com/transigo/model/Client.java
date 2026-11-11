@@ -33,8 +33,8 @@ public class Client {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
     
-    public String getAdresse() { return adresse; }
-    public void setAdresse(String adresse) { this.adresse = adresse; }
+    public String getAdresse() { return adress; }
+    public void setAdresse(String adresse) { this.adress = adresse; }
     
     public boolean isActif() { return actif; }
     public void setActif(boolean actif) { this.actif = actif; }
