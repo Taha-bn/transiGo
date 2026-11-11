@@ -1,3 +1,4 @@
+package com.transigo.model;
 import java.time.LocalDate;
 
 public class CommandETransport{

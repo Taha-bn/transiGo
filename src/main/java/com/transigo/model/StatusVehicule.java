@@ -1,3 +1,4 @@
+package com.transigo.model;
 public enum StatusVehicule {
     DISPONIBLE,
     EN_MAINTENANCE,

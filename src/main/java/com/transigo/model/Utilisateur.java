@@ -1,3 +1,5 @@
+package com.transigo.model;
+
 public class Utilisateur {
     private int id ;
     private String nom;
