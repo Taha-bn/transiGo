@@ -65,9 +65,13 @@ public class TestClientDAO {
                 clientToUpdate.setEmail("modified@example.com");
                 clientToUpdate.setAdresse("Agadir");
 
-                clientDAO.updateClient(clientToUpdate);
+                boolean updated = clientDAO.updateClient(clientToUpdate);
 
-                System.out.println("\nClient modifie avec succès !");
+                if (updated) {
+                    System.out.println("\nClient modifie avec succès !");
+                } else {
+                    System.out.println("\nEchec de modification !");
+                }
 
                 Client updatedClient =
                         clientDAO.getClientById(idClient);
@@ -79,18 +83,37 @@ public class TestClientDAO {
             }
 
 
-            // 5. Supprimer un client
-            clientDAO.deleteClient(idClient);
+            // 5. Desactiver un client
+            boolean deactivated = clientDAO.deactivateClient(idClient);
 
-            System.out.println("\nClient supprimé !");
+            if (deactivated) {
+                System.out.println("\nClient desactive avec succès !");
+            } else {
+                System.out.println("\nEchec de desactivation !");
+            }
 
-            Client deletedClient =
-                    clientDAO.getClientById(idClient);
+            Client inactiveClient = clientDAO.getClientById(idClient);
+
+            if (inactiveClient != null && !inactiveClient.isActif()) {
+                System.out.println("Statut actif = false : confirmation !");
+            } else {
+                System.out.println("Erreur : le client est encore actif !");
+            }
+
+
+            // 6. Supprimer un client
+            boolean deleted = clientDAO.deleteClient(idClient);
+
+            if (deleted) {
+                System.out.println("\nClient supprimé avec succès !");
+            } else {
+                System.out.println("\nEchec de suppression !");
+            }
+
+            Client deletedClient = clientDAO.getClientById(idClient);
 
             if (deletedClient == null) {
-                System.out.println(
-                        "Suppression confirmée : client introuvable !"
-                );
+                System.out.println("Suppression confirmée !");
             } else {
                 System.out.println("Erreur : le client existe encore !");
             }

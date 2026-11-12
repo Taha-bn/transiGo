@@ -1,4 +1,3 @@
-
 package com.transigo.dao;
 
 import com.transigo.config.DatabaseConnection;
@@ -13,9 +12,9 @@ import java.util.List;
 
 public class ClientDAO {
 
-    // Ajouter un client
-    public void addClient(Client client) throws SQLException {
+    private static final String COLUMNS = "id, nom, telephone, email, adresse, actif";
 
+    public void addClient(Client client) throws SQLException {
         String sql = """
                 INSERT INTO clients (nom, telephone, email, adresse, actif)
                 VALUES (?, ?, ?, ?, ?)
@@ -39,39 +38,24 @@ public class ClientDAO {
         }
     }
 
-    // Recuperer tous les clients
     public List<Client> getAllClients() throws SQLException {
-
         List<Client> clients = new ArrayList<>();
-
-        String sql = "SELECT * FROM clients";
+        String sql = "SELECT " + COLUMNS + " FROM clients ORDER BY id";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet result = statement.executeQuery()) {
 
             while (result.next()) {
-
-                Client client = new Client(
-                        result.getInt("id"),
-                        result.getString("nom"),
-                        result.getString("telephone"),
-                        result.getString("email"),
-                        result.getString("adresse"),
-                        result.getBoolean("actif")
-                );
-
-                clients.add(client);
+                clients.add(mapClient(result));
             }
         }
 
         return clients;
     }
 
-    // Recuperer un client par son ID
     public Client getClientById(int id) throws SQLException {
-
-        String sql = "SELECT * FROM clients WHERE id = ?";
+        String sql = "SELECT " + COLUMNS + " FROM clients WHERE id = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -79,17 +63,8 @@ public class ClientDAO {
             statement.setInt(1, id);
 
             try (ResultSet result = statement.executeQuery()) {
-
                 if (result.next()) {
-
-                    return new Client(
-                            result.getInt("id"),
-                            result.getString("nom"),
-                            result.getString("telephone"),
-                            result.getString("email"),
-                            result.getString("adresse"),
-                            result.getBoolean("actif")
-                    );
+                    return mapClient(result);
                 }
             }
         }
@@ -97,14 +72,12 @@ public class ClientDAO {
         return null;
     }
 
-    // Modifier un client
-    public void updateClient(Client client) throws SQLException {
-
+    public boolean updateClient(Client client) throws SQLException {
         String sql = """
-            UPDATE clients
-            SET nom = ?, telephone = ?, email = ?, adresse = ?, actif = ?
-            WHERE id = ?
-            """;
+                UPDATE clients
+                SET nom = ?, telephone = ?, email = ?, adresse = ?, actif = ?
+                WHERE id = ?
+                """;
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -116,12 +89,23 @@ public class ClientDAO {
             statement.setBoolean(5, client.isActif());
             statement.setInt(6, client.getId());
 
-            statement.executeUpdate();
+            return statement.executeUpdate() > 0;
         }
     }
-    // Supprimer un client
-    public void deleteClient(int id) throws SQLException {
 
+    public boolean deactivateClient(int id) throws SQLException {
+        String sql = "UPDATE clients SET actif = false WHERE id = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setInt(1, id);
+
+            return statement.executeUpdate() > 0;
+        }
+    }
+
+    public boolean deleteClient(int id) throws SQLException {
         String sql = "DELETE FROM clients WHERE id = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
@@ -129,9 +113,18 @@ public class ClientDAO {
 
             statement.setInt(1, id);
 
-            statement.executeUpdate();
+            return statement.executeUpdate() > 0;
         }
     }
 
-
+    private Client mapClient(ResultSet result) throws SQLException {
+        return new Client(
+                result.getInt("id"),
+                result.getString("nom"),
+                result.getString("telephone"),
+                result.getString("email"),
+                result.getString("adresse"),
+                result.getBoolean("actif")
+        );
+    }
 }
