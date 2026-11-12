@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Path?>
+<?import javafx.scene.shape.MoveTo?>
+<?import javafx.scene.shape.CubicCurveTo?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.Group?>
+
+
+
+
+<HBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.transigo.controller.LoginController"
+      prefWidth="1200"
+      prefHeight="780"
+      styleClass="login-root">
+
+    <!-- PARTIE GAUCHE : IDENTITE TRANSIGO -->
+    <StackPane fx:id="heroPanel"
+               minWidth="380"
+               prefWidth="460"
+               styleClass="hero">
+
+        <children>
+
+            <!-- Halo decoratif -->
+            <Region styleClass="hero-glow"
+                    mouseTransparent="true"/>
+
+            <!-- Route decorative -->
+            <Group mouseTransparent="true"
+                   StackPane.alignment="BOTTOM_RIGHT">
+                <Path stroke="#38BDF8"
+                      strokeWidth="2"
+                      fill="TRANSPARENT">
+                    <elements>
+                        <MoveTo x="10" y="150"/>
+                        <CubicCurveTo controlX1="74" controlY1="118"
+                                      controlX2="44" controlY2="60"
+                                      x="116" y="38"/>
+                        <CubicCurveTo controlX1="164" controlY1="24"
+                                      controlX2="186" controlY2="12"
+                                      x="214" y="8"/>
+                    </elements>
+                </Path>
+                <Circle centerX="116" centerY="38"
+                        radius="4" fill="#7DD3FC"/>
+                <Circle centerX="214" centerY="8"
+                        radius="4" fill="#7DD3FC"/>
+            </Group>
+
+            <!-- Contenu gauche -->
+            <VBox fx:id="heroContent"
+                  alignment="CENTER_LEFT"
+                  spacing="22"
+                  styleClass="hero-content">
+
+
+                <StackPane styleClass="brand-mark"
+                           minWidth="64" minHeight="64"
+                           prefWidth="64" prefHeight="64">
+                    <Group>
+                        <Circle centerX="20" centerY="20" radius="17"
+                                fill="TRANSPARENT"
+                                stroke="WHITE"
+                                strokeWidth="2"/>
+
+                        <Ellipse centerX="20" centerY="20"
+                                 radiusX="7.5" radiusY="17"
+                                 fill="TRANSPARENT"
+                                 stroke="#FFFFFF"
+                                 opacity="0.55"
+                                 strokeWidth="1.4"/>
+
+                        <Ellipse centerX="20" centerY="20"
+                                 radiusX="17" radiusY="6.5"
+                                 fill="TRANSPARENT"
+                                 stroke="#FFFFFF"
+                                 opacity="0.45"
+                                 strokeWidth="1.3"/>
+
+                        <Path fill="TRANSPARENT"
+                              stroke="#BFE3FF"
+                              strokeWidth="3"
+                              strokeLineCap="ROUND">
+                            <elements>
+                                <MoveTo x="-1" y="27"/>
+                                <CubicCurveTo controlX1="9" controlY1="38"
+                                              controlX2="32" controlY2="31"
+                                              x="41" y="13"/>
+                            </elements>
+                        </Path>
+                    </Group>
+                </StackPane>
+
+
+                <VBox spacing="5">
+                    <Label text="TransiGo"
+                           styleClass="hero-wordmark"/>
+                    <Label text="L O G I S T I C S   &amp;   T R A N S P O R T"
+                           styleClass="brand-tagline"/>
+                </VBox>
+
+                <Label text="Transport intelligent,&#10;gestion simplifiée."
+                       wrapText="true"
+                       styleClass="hero-tagline"/>
+
+                <Region minHeight="1"
+                        prefHeight="1"
+                        maxWidth="64"
+                        styleClass="hero-divider"/>
+
+                <VBox spacing="14">
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Label text="✓" styleClass="feature-check"/>
+                        <Label text="Suivi des trajets en temps réel"
+                               styleClass="feature-text"/>
+                    </HBox>
+
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Label text="✓" styleClass="feature-check"/>
+                        <Label text="Gestion de flotte simplifiée"
+                               styleClass="feature-text"/>
+                    </HBox>
+
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Label text="✓" styleClass="feature-check"/>
+                        <Label text="Pilotage centralisé"
+                               styleClass="feature-text"/>
+                    </HBox>
+                </VBox>
+
+            </VBox>
+        </children>
+    </StackPane>
+
+    <!-- PARTIE DROITE : FORMULAIRE -->
+    <StackPane styleClass="form-side"
+               HBox.hgrow="ALWAYS">
+
+        <Region styleClass="form-glow"
+                mouseTransparent="true"/>
+
+        <VBox fx:id="loginCard"
+              alignment="TOP_LEFT"
+              spacing="24"
+              maxWidth="460"
+              prefWidth="460"
+              styleClass="card">
+
+            <!-- En-tete -->
+            <VBox spacing="10">
+                <Label text="CONNEXION SÉCURISÉE"
+                       styleClass="chip"/>
+
+                <Label text="Bienvenue sur TransiGo"
+                       wrapText="true"
+                       styleClass="card-title"/>
+
+                <Label text="Connectez-vous à votre espace professionnel"
+                       wrapText="true"
+                       styleClass="card-subtitle"/>
+            </VBox>
+
+            <!-- Adresse email -->
+            <VBox spacing="7">
+                <Label text="Adresse e-mail"
+                       styleClass="field-label"/>
+
+                <StackPane styleClass="input-container">
+                    <Label text="✉"
+                           styleClass="input-icon"
+                           StackPane.alignment="CENTER_LEFT"
+                           translateX="17"/>
+
+                    <TextField fx:id="emailField"
+                               promptText="vous@entreprise.com"
+                               styleClass="input"
+                               accessibleText="Adresse e-mail"/>
+                </StackPane>
+            </VBox>
+
+            <!-- Mot de passe -->
+            <VBox spacing="7">
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <Label text="Mot de passe"
+                           styleClass="field-label"/>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <Button fx:id="togglePasswordButton"
+                            text="Afficher"
+                            onAction="#togglePassword"
+                            styleClass="link-button"
+                            focusTraversable="false"/>
+                </HBox>
+
+                <StackPane styleClass="input-container">
+                    <Label text="▢"
+                           styleClass="input-icon"
+                           StackPane.alignment="CENTER_LEFT"
+                           translateX="17"/>
+
+                    <PasswordField fx:id="passwordField"
+                                   promptText="Votre mot de passe"
+                                   styleClass="input"
+                                   accessibleText="Mot de passe"/>
+
+                    <TextField fx:id="passwordVisibleField"
+                               promptText="Votre mot de passe"
+                               styleClass="input"
+                               visible="false"
+                               managed="false"
+                               accessibleText="Mot de passe visible"/>
+                </StackPane>
+            </VBox>
+
+            <!-- Bouton et message -->
+            <VBox spacing="12">
+                <Button text="Se connecter"
+                        onAction="#handleLogin"
+                        maxWidth="Infinity"
+                        styleClass="primary-button"/>
+
+                <Label fx:id="messageLabel"
+                       wrapText="true"
+                       minHeight="18"
+                       styleClass="message"/>
+            </VBox>
+
+            <!-- Footer -->
+            <Label text="© 2026 TransiGo — Tous droits réservés"
+                   styleClass="footer"/>
+
+        </VBox>
+    </StackPane>
+
+</HBox>

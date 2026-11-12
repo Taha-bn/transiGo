@@ -1,6 +1,8 @@
 
 package com.transigo.config;
 
+import com.transigo.config.DatabaseConnection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,0 +1,258 @@
+
+/* ================= GENERAL ================= */
+
+.login-root {
+    -fx-background-color: #F3F6FC;
+    -fx-font-family: "Segoe UI";
+}
+
+/* ================= PARTIE GAUCHE ================= */
+
+.hero {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #102944,
+            #1D527D
+    );
+    -fx-padding: 0;
+}
+
+.hero-content {
+    -fx-padding: 55 48 55 48;
+}
+
+.hero-glow {
+    -fx-background-color: radial-gradient(
+            center 80% 10%,
+            radius 70%,
+            rgba(48, 145, 204, 0.35),
+            transparent
+    );
+    -fx-opacity: 0.8;
+}
+
+.brand-mark {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #287BB8,
+            #174F83
+    );
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.22),
+            18,
+            0.2,
+            0,
+            7
+    );
+}
+
+.brand-symbol {
+    -fx-text-fill: white;
+    -fx-font-size: 48px;
+}
+
+.hero-wordmark {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 40px;
+    -fx-font-weight: 900;
+    -fx-font-style: italic;
+}
+
+.brand-tagline {
+    -fx-text-fill: #B9D8F5;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.hero-tagline {
+    -fx-text-fill: #D9E9F8;
+    -fx-font-size: 19px;
+    -fx-line-spacing: 5px;
+}
+
+.hero-divider {
+    -fx-background-color: rgba(255,255,255,0.25);
+}
+
+.feature-check {
+    -fx-background-color: rgba(14,165,233,0.17);
+    -fx-border-color: rgba(56,189,248,0.45);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-text-fill: #8EDBFF;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-min-width: 28px;
+    -fx-min-height: 28px;
+    -fx-alignment: center;
+}
+
+.feature-text {
+    -fx-text-fill: #D7E8F8;
+    -fx-font-size: 15px;
+}
+
+/* ================= PARTIE DROITE ================= */
+
+.form-side {
+    -fx-background-color: #F3F6FC;
+    -fx-padding: 35px;
+}
+
+.form-glow {
+    -fx-background-color: radial-gradient(
+            center 50% 0%,
+            radius 75%,
+            rgba(59,130,246,0.12),
+            transparent
+    );
+}
+
+/* ================= CARTE ================= */
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 32;
+    -fx-padding: 48 55 45 55;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(15,35,65,0.15),
+            28,
+            0.15,
+            0,
+            12
+    );
+}
+
+/* ================= TITRES ================= */
+
+.chip {
+    -fx-background-color: #E8F0FF;
+    -fx-background-radius: 30;
+    -fx-text-fill: #2563EB;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 7 15 7 15;
+}
+
+.card-title {
+    -fx-text-fill: #102D50;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.card-subtitle {
+    -fx-text-fill: #7890AF;
+    -fx-font-size: 15px;
+}
+
+/* ================= CHAMPS ================= */
+
+.field-label {
+    -fx-text-fill: #24466C;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.input-container {
+    -fx-background-color: #F5F8FC;
+    -fx-background-radius: 16;
+    -fx-border-color: #DCE6F3;
+    -fx-border-radius: 16;
+    -fx-border-width: 1.2;
+    -fx-pref-height: 58px;
+    -fx-min-height: 58px;
+}
+
+
+.input {
+    -fx-background-color: transparent;
+    -fx-background-radius: 16;
+    -fx-border-color: transparent;
+    -fx-padding: 0 16 0 58;
+    -fx-font-size: 15px;
+    -fx-text-fill: #183B62;
+    -fx-prompt-text-fill: #94A8C1;
+    -fx-pref-height: 58px;
+}
+
+.input-icon {
+    -fx-text-fill: #4787FF;
+    -fx-font-size: 25px;
+}
+
+/* ================= BOUTON AFFICHER ================= */
+
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3478FF;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.link-button:hover {
+    -fx-text-fill: #174FD1;
+}
+
+/* ================= BOUTON CONNEXION ================= */
+
+.primary-button {
+    -fx-background-color: linear-gradient(
+            to right,
+            #3478F6,
+            #2050D9
+    );
+    -fx-background-radius: 16;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 62px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(37,99,235,0.35),
+            15,
+            0.25,
+            0,
+            7
+    );
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(
+            to right,
+            #2568E8,
+            #1745C5
+    );
+}
+
+.primary-button:pressed {
+    -fx-translate-y: 2px;
+}
+
+/* ================= MESSAGES ================= */
+
+.message {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748B;
+}
+
+.message-error {
+    -fx-text-fill: #DC2626;
+}
+
+.message-success {
+    -fx-text-fill: #159447;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    -fx-text-fill: #8A9BB3;
+    -fx-font-size: 12px;
+}
