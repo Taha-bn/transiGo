@@ -100,7 +100,7 @@
 
 .form-side {
     -fx-background-color: #F3F6FC;
-    -fx-padding: 35px;
+    -fx-padding: 0;
 }
 
 .form-glow {
@@ -114,10 +114,40 @@
 
 /* ================= CARTE ================= */
 
+.form-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 0;
+}
+
+.form-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.form-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10px;
+}
+
+.form-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #C8D7EA;
+    -fx-background-radius: 8;
+}
+
+.form-scroll .scroll-bar:vertical .increment-button,
+.form-scroll .scroll-bar:vertical .decrement-button {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.form-scroll-content {
+    -fx-padding: 30 28;
+}
+
 .card {
     -fx-background-color: white;
     -fx-background-radius: 32;
-    -fx-padding: 48 55 45 55;
+    -fx-padding: 34 44 30 44;
     -fx-effect: dropshadow(
             gaussian,
             rgba(15,35,65,0.15),
@@ -183,6 +213,176 @@
 .input-icon {
     -fx-text-fill: #4787FF;
     -fx-font-size: 25px;
+}
+
+/* ================= CARTES DE TYPE DE COMPTE ================= */
+
+.role-card {
+    -fx-background-color: #F7F9FD;
+    -fx-background-radius: 16;
+    -fx-border-color: #DCE6F3;
+    -fx-border-radius: 16;
+    -fx-border-width: 1.5;
+    -fx-padding: 12 14;
+    -fx-cursor: hand;
+}
+
+.role-card-admin {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #F7FAFF,
+            #EEF3FC
+    );
+    -fx-border-color: #D8E4F6;
+}
+
+.role-card-manager {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #F6FCFA,
+            #ECF9F4
+    );
+    -fx-border-color: #CFEADF;
+}
+
+.role-card:hover {
+    -fx-border-color: #A9C2E8;
+}
+
+.role-card-admin:hover {
+    -fx-border-color: #7FA6E8;
+}
+
+.role-card-manager:hover {
+    -fx-border-color: #6BCFB2;
+}
+
+.role-card:focused {
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(47,111,237,0.18),
+            12,
+            0.10,
+            0,
+            2
+    );
+}
+
+.role-card-admin.selected {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #F1F6FF,
+            #E5EEFD
+    );
+    -fx-border-color: #2563EB;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(37,99,235,0.24),
+            18,
+            0.12,
+            0,
+            6
+    );
+}
+
+.role-card-manager.selected {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #EFFBF6,
+            #DDF5EC
+    );
+    -fx-border-color: #0F9D76;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(15,157,118,0.22),
+            18,
+            0.12,
+            0,
+            6
+    );
+}
+
+.role-card.unselected .role-title {
+    -fx-text-fill: #4B617C;
+}
+
+.role-card.unselected .role-subtitle {
+    -fx-text-fill: #8294AA;
+}
+
+.role-icon-badge {
+    -fx-background-radius: 12;
+    -fx-alignment: center;
+}
+
+.role-icon-bg-admin {
+    -fx-background-color: #E2ECFB;
+}
+
+.role-icon-bg-manager {
+    -fx-background-color: #DCF4EA;
+}
+
+.role-card-admin.selected .role-icon-bg-admin {
+    -fx-background-color: #D5E5FF;
+}
+
+.role-card-manager.selected .role-icon-bg-manager {
+    -fx-background-color: #C9EFE1;
+}
+
+.role-icon-shape {
+    -fx-fill: transparent;
+    -fx-stroke-width: 1.8;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.role-icon-admin {
+    -fx-stroke: #1D4ED8;
+}
+
+.role-icon-manager {
+    -fx-stroke: #0F766E;
+}
+
+.role-icon-check-shape {
+    -fx-stroke: #1D4ED8;
+    -fx-stroke-width: 2.2;
+}
+
+.role-title {
+    -fx-text-fill: #123152;
+    -fx-font-size: 14.5px;
+    -fx-font-weight: bold;
+}
+
+.role-subtitle {
+    -fx-text-fill: #6E829C;
+    -fx-font-size: 11px;
+}
+
+.role-check {
+    -fx-min-width: 22px;
+    -fx-min-height: 22px;
+    -fx-max-width: 22px;
+    -fx-max-height: 22px;
+    -fx-background-radius: 11;
+    -fx-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 1 0;
+}
+
+.role-check-admin {
+    -fx-background-color: #2563EB;
+}
+
+.role-check-manager {
+    -fx-background-color: #0F9D76;
 }
 
 /* ================= BOUTON AFFICHER ================= */

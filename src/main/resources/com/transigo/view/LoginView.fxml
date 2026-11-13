@@ -147,98 +147,203 @@
         <Region styleClass="form-glow"
                 mouseTransparent="true"/>
 
-        <VBox fx:id="loginCard"
-              alignment="TOP_LEFT"
-              spacing="24"
-              maxWidth="460"
-              prefWidth="460"
-              styleClass="card">
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED"
+                    styleClass="form-scroll">
 
-            <!-- En-tete -->
-            <VBox spacing="10">
-                <Label text="CONNEXION SÉCURISÉE"
-                       styleClass="chip"/>
+            <content>
+                <StackPane alignment="TOP_CENTER"
+                           styleClass="form-scroll-content">
 
-                <Label text="Bienvenue sur TransiGo"
-                       wrapText="true"
-                       styleClass="card-title"/>
+                    <VBox fx:id="loginCard"
+                          alignment="TOP_LEFT"
+                          spacing="17"
+                          maxWidth="540"
+                          prefWidth="540"
+                          styleClass="card">
 
-                <Label text="Connectez-vous à votre espace professionnel"
-                       wrapText="true"
-                       styleClass="card-subtitle"/>
-            </VBox>
+                        <!-- En-tete -->
+                        <VBox spacing="10">
+                            <Label text="CONNEXION SÉCURISÉE"
+                                   styleClass="chip"/>
 
-            <!-- Adresse email -->
-            <VBox spacing="7">
-                <Label text="Adresse e-mail"
-                       styleClass="field-label"/>
+                            <Label text="Bienvenue sur TransiGo"
+                                   wrapText="true"
+                                   styleClass="card-title"/>
 
-                <StackPane styleClass="input-container">
-                    <Label text="✉"
-                           styleClass="input-icon"
-                           StackPane.alignment="CENTER_LEFT"
-                           translateX="17"/>
+                            <Label text="Connectez-vous à votre espace professionnel"
+                                   wrapText="true"
+                                   styleClass="card-subtitle"/>
+                        </VBox>
 
-                    <TextField fx:id="emailField"
-                               promptText="vous@entreprise.com"
-                               styleClass="input"
-                               accessibleText="Adresse e-mail"/>
+                        <!-- Choix du type de compte -->
+                        <VBox spacing="9">
+                            <Label text="Type de compte"
+                                   styleClass="field-label"/>
+
+                            <VBox spacing="12">
+
+                                <!-- Administrateur -->
+                                <HBox fx:id="adminCard"
+                                      alignment="CENTER_LEFT"
+                                      spacing="14"
+                                      focusTraversable="true"
+                                      onMouseClicked="#handleCardClicked"
+                                      onMouseEntered="#handleCardMouseEntered"
+                                      onMouseExited="#handleCardMouseExited"
+                                      onKeyPressed="#handleCardKeyPressed"
+                                      styleClass="role-card role-card-admin">
+
+                                    <StackPane styleClass="role-icon-badge role-icon-bg-admin"
+                                               minWidth="44" minHeight="44"
+                                               prefWidth="44" prefHeight="44">
+                                        <Group scaleX="1.3" scaleY="1.3">
+                                            <SVGPath content="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                                                     styleClass="role-icon-shape role-icon-admin"/>
+                                            <SVGPath content="m9 12 2 2 4-4"
+                                                     styleClass="role-icon-shape role-icon-check-shape"/>
+                                        </Group>
+                                    </StackPane>
+
+                                    <VBox spacing="3" HBox.hgrow="ALWAYS">
+                                        <Label text="Administrateur"
+                                               styleClass="role-title"
+                                               wrapText="true"/>
+                                        <Label text="Contrôle complet du système"
+                                               styleClass="role-subtitle"
+                                               wrapText="true"/>
+                                    </VBox>
+
+                                    <Label fx:id="adminCheck"
+                                           text="✓"
+                                           visible="false"
+                                           opacity="0"
+                                           styleClass="role-check role-check-admin"/>
+                                </HBox>
+
+                                <!-- Gestionnaire de transport -->
+                                <HBox fx:id="managerCard"
+                                      alignment="CENTER_LEFT"
+                                      spacing="14"
+                                      focusTraversable="true"
+                                      onMouseClicked="#handleCardClicked"
+                                      onMouseEntered="#handleCardMouseEntered"
+                                      onMouseExited="#handleCardMouseExited"
+                                      onKeyPressed="#handleCardKeyPressed"
+                                      styleClass="role-card role-card-manager">
+
+                                    <StackPane styleClass="role-icon-badge role-icon-bg-manager"
+                                               minWidth="44" minHeight="44"
+                                               prefWidth="44" prefHeight="44">
+                                        <Group scaleX="1.3" scaleY="1.3">
+                                            <SVGPath content="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"
+                                                     styleClass="role-icon-shape role-icon-manager"/>
+                                            <SVGPath content="M15 18H9"
+                                                     styleClass="role-icon-shape role-icon-manager"/>
+                                            <SVGPath content="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"
+                                                     styleClass="role-icon-shape role-icon-manager"/>
+                                            <Circle centerX="17" centerY="18" radius="2"
+                                                    styleClass="role-icon-shape role-icon-manager"/>
+                                            <Circle centerX="7" centerY="18" radius="2"
+                                                    styleClass="role-icon-shape role-icon-manager"/>
+                                        </Group>
+                                    </StackPane>
+
+                                    <VBox spacing="3" HBox.hgrow="ALWAYS">
+                                        <Label text="Gestionnaire de Transport"
+                                               styleClass="role-title"
+                                               wrapText="true"/>
+                                        <Label text="Opérations, flotte et planification"
+                                               styleClass="role-subtitle"
+                                               wrapText="true"/>
+                                    </VBox>
+
+                                    <Label fx:id="managerCheck"
+                                           text="✓"
+                                           visible="false"
+                                           opacity="0"
+                                           styleClass="role-check role-check-manager"/>
+                                </HBox>
+
+                            </VBox>
+                        </VBox>
+
+                        <!-- Adresse email -->
+                        <VBox spacing="7">
+                            <Label text="Adresse e-mail"
+                                   styleClass="field-label"/>
+
+                            <StackPane styleClass="input-container">
+                                <Label text="✉"
+                                       styleClass="input-icon"
+                                       StackPane.alignment="CENTER_LEFT"
+                                       translateX="17"/>
+
+                                <TextField fx:id="emailField"
+                                           promptText="vous@entreprise.com"
+                                           styleClass="input"
+                                           accessibleText="Adresse e-mail"/>
+                            </StackPane>
+                        </VBox>
+
+                        <!-- Mot de passe -->
+                        <VBox spacing="7">
+                            <HBox alignment="CENTER_LEFT" spacing="8">
+                                <Label text="Mot de passe"
+                                       styleClass="field-label"/>
+
+                                <Region HBox.hgrow="ALWAYS"/>
+
+                                <Button fx:id="togglePasswordButton"
+                                        text="Afficher"
+                                        onAction="#togglePassword"
+                                        styleClass="link-button"
+                                        focusTraversable="false"/>
+                            </HBox>
+
+                            <StackPane styleClass="input-container">
+                                <Label text="▢"
+                                       styleClass="input-icon"
+                                       StackPane.alignment="CENTER_LEFT"
+                                       translateX="17"/>
+
+                                <PasswordField fx:id="passwordField"
+                                               promptText="Votre mot de passe"
+                                               styleClass="input"
+                                               accessibleText="Mot de passe"/>
+
+                                <TextField fx:id="passwordVisibleField"
+                                           promptText="Votre mot de passe"
+                                           styleClass="input"
+                                           visible="false"
+                                           managed="false"
+                                           accessibleText="Mot de passe visible"/>
+                            </StackPane>
+                        </VBox>
+
+                        <!-- Bouton et message -->
+                        <VBox spacing="12">
+                            <Button fx:id="loginButton"
+                                    text="Se connecter"
+                                    onAction="#handleLogin"
+                                    maxWidth="Infinity"
+                                    styleClass="primary-button"/>
+
+                            <Label fx:id="messageLabel"
+                                   wrapText="true"
+                                   minHeight="18"
+                                   styleClass="message"/>
+                        </VBox>
+
+                        <!-- Footer -->
+                        <Label text="© 2026 TransiGo — Tous droits réservés"
+                               styleClass="footer"/>
+
+                    </VBox>
                 </StackPane>
-            </VBox>
-
-            <!-- Mot de passe -->
-            <VBox spacing="7">
-                <HBox alignment="CENTER_LEFT" spacing="8">
-                    <Label text="Mot de passe"
-                           styleClass="field-label"/>
-
-                    <Region HBox.hgrow="ALWAYS"/>
-
-                    <Button fx:id="togglePasswordButton"
-                            text="Afficher"
-                            onAction="#togglePassword"
-                            styleClass="link-button"
-                            focusTraversable="false"/>
-                </HBox>
-
-                <StackPane styleClass="input-container">
-                    <Label text="▢"
-                           styleClass="input-icon"
-                           StackPane.alignment="CENTER_LEFT"
-                           translateX="17"/>
-
-                    <PasswordField fx:id="passwordField"
-                                   promptText="Votre mot de passe"
-                                   styleClass="input"
-                                   accessibleText="Mot de passe"/>
-
-                    <TextField fx:id="passwordVisibleField"
-                               promptText="Votre mot de passe"
-                               styleClass="input"
-                               visible="false"
-                               managed="false"
-                               accessibleText="Mot de passe visible"/>
-                </StackPane>
-            </VBox>
-
-            <!-- Bouton et message -->
-            <VBox spacing="12">
-                <Button text="Se connecter"
-                        onAction="#handleLogin"
-                        maxWidth="Infinity"
-                        styleClass="primary-button"/>
-
-                <Label fx:id="messageLabel"
-                       wrapText="true"
-                       minHeight="18"
-                       styleClass="message"/>
-            </VBox>
-
-            <!-- Footer -->
-            <Label text="© 2026 TransiGo — Tous droits réservés"
-                   styleClass="footer"/>
-
-        </VBox>
+            </content>
+        </ScrollPane>
     </StackPane>
 
 </HBox>

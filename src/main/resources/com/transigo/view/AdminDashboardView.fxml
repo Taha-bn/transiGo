@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.transigo.controller.DashboardController"
+            prefWidth="1200"
+            prefHeight="780"
+            styleClass="dashboard-root dashboard-admin">
+
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              spacing="14"
+              styleClass="dashboard-topbar">
+
+            <StackPane minWidth="42" minHeight="42"
+                       prefWidth="42" prefHeight="42"
+                       styleClass="dashboard-brand-mark">
+                <Label text="T" styleClass="dashboard-brand-letter"/>
+            </StackPane>
+
+            <VBox spacing="0">
+                <Label text="TransiGo" styleClass="dashboard-brand"/>
+                <Label text="ADMINISTRATION" styleClass="dashboard-brand-sub"/>
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label fx:id="roleBadge"
+                   text="Administrateur"
+                   styleClass="role-badge"/>
+
+            <Button text="Se déconnecter"
+                    onAction="#handleLogout"
+                    styleClass="logout-button"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED"
+                    styleClass="dashboard-scroll">
+
+            <content>
+                <VBox spacing="22" styleClass="dashboard-content">
+
+                    <VBox spacing="6">
+                        <Label fx:id="welcomeLabel"
+                               text="Bienvenue"
+                               styleClass="dashboard-title"/>
+                        <Label fx:id="subtitleLabel"
+                               text="Pilotage complet de la plateforme TransiGo."
+                               wrapText="true"
+                               styleClass="dashboard-subtitle"/>
+                    </VBox>
+
+                    <HBox spacing="16" fillHeight="true">
+
+                        <VBox spacing="7"
+                              maxWidth="Infinity"
+                              HBox.hgrow="ALWAYS"
+                              styleClass="dashboard-card">
+                            <Label text="UTILISATEURS"
+                                   styleClass="dashboard-card-label"/>
+                            <Label text="—"
+                                   styleClass="dashboard-card-value"/>
+                            <Label text="Gestion des comptes à connecter"
+                                   wrapText="true"
+                                   styleClass="dashboard-card-note"/>
+                        </VBox>
+
+                        <VBox spacing="7"
+                              maxWidth="Infinity"
+                              HBox.hgrow="ALWAYS"
+                              styleClass="dashboard-card">
+                            <Label text="RÔLES &amp; ACCÈS"
+                                   styleClass="dashboard-card-label"/>
+                            <Label text="2"
+                                   styleClass="dashboard-card-value"/>
+                            <Label text="Administrateur et gestionnaire"
+                                   wrapText="true"
+                                   styleClass="dashboard-card-note"/>
+                        </VBox>
+
+                        <VBox spacing="7"
+                              maxWidth="Infinity"
+                              HBox.hgrow="ALWAYS"
+                              styleClass="dashboard-card">
+                            <Label text="SYSTÈME"
+                                   styleClass="dashboard-card-label"/>
+                            <Label text="OK"
+                                   styleClass="dashboard-card-value dashboard-card-value-admin"/>
+                            <Label text="Configuration et supervision"
+                                   wrapText="true"
+                                   styleClass="dashboard-card-note"/>
+                        </VBox>
+
+                    </HBox>
+
+                    <VBox spacing="8" styleClass="dashboard-panel">
+                        <Label text="Espace administrateur"
+                               styleClass="dashboard-panel-title"/>
+
+                        <Label fx:id="userNameLabel"
+                               text="Nom de l'utilisateur"
+                               styleClass="dashboard-user-line"/>
+
+                        <Label fx:id="userEmailLabel"
+                               text="email@transigo.ma"
+                               styleClass="dashboard-user-line"/>
+
+                        <Region minHeight="6"/>
+
+                        <Label text="Le tableau de bord administratif est en place. Les modules de gestion des utilisateurs, des rôles et de la configuration de la plateforme seront ajoutés ici."
+                               wrapText="true"
+                               styleClass="dashboard-panel-note"/>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

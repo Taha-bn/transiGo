@@ -1,0 +1,218 @@
+/* ============================================================
+   TransiGo - Tableaux de bord
+   Palette cohérente avec l'écran de connexion.
+   ============================================================ */
+
+.dashboard-root {
+    -fx-background-color: #F3F6FC;
+    -fx-font-family: "Segoe UI";
+}
+
+.dashboard-topbar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 16 36;
+    -fx-border-color: transparent transparent #E3EBF5 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.dashboard-brand-mark {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #102944,
+            #1D527D
+    );
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(16,41,68,0.22),
+            12,
+            0.10,
+            0,
+            4
+    );
+}
+
+.dashboard-brand-mark-manager {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #0F3D3A,
+            #0F766E
+    );
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(15,118,110,0.22),
+            12,
+            0.10,
+            0,
+            4
+    );
+}
+
+.dashboard-brand-letter {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.dashboard-brand {
+    -fx-text-fill: #102D50;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.dashboard-brand-sub {
+    -fx-text-fill: #8A9BB3;
+    -fx-font-size: 9.5px;
+    -fx-font-weight: bold;
+}
+
+.role-badge {
+    -fx-background-radius: 20;
+    -fx-padding: 6 14;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.dashboard-admin .role-badge {
+    -fx-background-color: #E8F0FE;
+    -fx-text-fill: #1D4ED8;
+}
+
+.dashboard-manager .role-badge {
+    -fx-background-color: #DDF5EC;
+    -fx-text-fill: #0F766E;
+}
+
+.logout-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #D7E2F0;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-text-fill: #33506E;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 14;
+    -fx-cursor: hand;
+}
+
+.logout-button:hover {
+    -fx-background-color: #F2F6FC;
+    -fx-border-color: #B9CCE4;
+}
+
+.dashboard-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 0;
+}
+
+.dashboard-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.dashboard-content {
+    -fx-padding: 34 36 40 36;
+}
+
+.dashboard-title {
+    -fx-text-fill: #102D50;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.dashboard-subtitle {
+    -fx-text-fill: #6B7C93;
+    -fx-font-size: 14px;
+}
+
+.dashboard-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 18;
+    -fx-border-color: #E7EEF7;
+    -fx-border-radius: 18;
+    -fx-border-width: 1;
+    -fx-padding: 20 22;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(15,35,64,0.10),
+            22,
+            0.08,
+            0,
+            10
+    );
+}
+
+.dashboard-card-label {
+    -fx-text-fill: #6B7C93;
+    -fx-font-size: 10.5px;
+    -fx-font-weight: bold;
+}
+
+.dashboard-card-value {
+    -fx-text-fill: #102D50;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.dashboard-card-value-admin {
+    -fx-text-fill: #1D4ED8;
+    -fx-font-size: 20px;
+}
+
+.dashboard-admin .dashboard-card-value {
+    -fx-text-fill: #1D4ED8;
+}
+
+.dashboard-manager .dashboard-card-value {
+    -fx-text-fill: #0F766E;
+}
+
+.dashboard-card-note {
+    -fx-text-fill: #8A9BB3;
+    -fx-font-size: 11.5px;
+}
+
+.dashboard-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 18;
+    -fx-border-color: #E7EEF7;
+    -fx-border-radius: 18;
+    -fx-border-width: 1;
+    -fx-padding: 24 26;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(15,35,64,0.10),
+            22,
+            0.08,
+            0,
+            10
+    );
+}
+
+.dashboard-panel-title {
+    -fx-text-fill: #102D50;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.dashboard-user-line {
+    -fx-text-fill: #4B617C;
+    -fx-font-size: 13px;
+}
+
+.dashboard-panel-note {
+    -fx-text-fill: #7B8DA5;
+    -fx-font-size: 12.5px;
+    -fx-line-spacing: 3px;
+}
+
+.dashboard-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10px;
+}
+
+.dashboard-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #C8D7EA;
+    -fx-background-radius: 8;
+}
